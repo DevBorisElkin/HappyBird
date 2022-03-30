@@ -11,10 +11,13 @@ import GameplayKit
 class GameScene: SKScene {
     
     var backgroundNode: SKNode!
+    var birdNode: SKSpriteNode!
     
     override func didMove(to view: SKView) {
         
         backgroundNode = self.childNode(withName: "background")!
+        birdNode = self.childNode(withName: "bird") as! SKSpriteNode
+        
         
         let moveBackground = SKAction.move(by: CGVector(dx:-500, dy:0 ), duration: 10)
         
