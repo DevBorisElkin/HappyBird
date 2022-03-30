@@ -27,7 +27,10 @@ class GameScene: SKScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        <#code#>
+        
+        birdNode.physicsBody!.applyImpulse(CGVector(dx: 0, dy: 3))
+        
+        
     }
     
     
