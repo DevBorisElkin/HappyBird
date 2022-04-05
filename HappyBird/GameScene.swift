@@ -37,6 +37,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func stopGame() {
         backgroundNode.removeAllActions()
+        birdNode.physicsBody!.pinned = true
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
