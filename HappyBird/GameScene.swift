@@ -18,6 +18,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         backgroundNode = self.childNode(withName: "background")!
         birdNode = self.childNode(withName: "bird") as! SKSpriteNode
         
+        self.physicsWorld.contactDelegate = self
+        
         
         let moveBackground = SKAction.move(by: CGVector(dx:-500, dy:0 ), duration: 10)
         
@@ -33,6 +35,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    func stopGame() {
+        backgroundNode.removeAllActions()
+    }
     
+    func didBegin(_ contact: SKPhysicsContact) {
+        stopGame()
+    }
     
 }
