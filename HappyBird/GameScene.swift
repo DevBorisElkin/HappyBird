@@ -12,11 +12,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var backgroundNode: SKNode!
     var birdNode: SKSpriteNode!
+    var gameOverLabel: SKLabelNode!
     
     override func didMove(to view: SKView) {
         
         backgroundNode = self.childNode(withName: "background")!
         birdNode = self.childNode(withName: "bird") as! SKSpriteNode
+        
+        gameOverLabel = self.childNode(withName: "gameOverLabel") as! SKLabelNode
         
         self.physicsWorld.contactDelegate = self
         
