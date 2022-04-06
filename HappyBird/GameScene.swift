@@ -20,6 +20,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         birdNode = self.childNode(withName: "bird") as! SKSpriteNode
         
         gameOverLabel = self.childNode(withName: "gameOverLabel") as! SKLabelNode
+        gameOverLabel.alpha  = 0
         
         self.physicsWorld.contactDelegate = self
         
@@ -41,6 +42,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func stopGame() {
         backgroundNode.removeAllActions()
         birdNode.physicsBody!.pinned = true
+        gameOverLabel.alpha = 1
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
