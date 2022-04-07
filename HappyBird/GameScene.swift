@@ -42,7 +42,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func stopGame() {
         backgroundNode.removeAllActions()
         birdNode.physicsBody!.pinned = true
-        gameOverLabel.alpha = 1
+        gameOverLabel.run(SKAction.fadeIn(withDuration: 0.5))
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
