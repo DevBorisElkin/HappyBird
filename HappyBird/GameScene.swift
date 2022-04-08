@@ -25,7 +25,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.contactDelegate = self
         
         
-        let moveBackground = SKAction.move(by: CGVector(dx:-500, dy:0 ), duration: 10)
+        let moveBackground = SKAction.move(by: CGVector(dx:-800, dy:0 ), duration: 10)
         
         backgroundNode.run(moveBackground)
         
@@ -42,7 +42,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func stopGame() {
         backgroundNode.removeAllActions()
         birdNode.physicsBody!.pinned = true
-        gameOverLabel.run(SKAction.fadeIn(withDuration: 0.5))
+        gameOverLabel.run(SKAction.fadeIn(withDuration: 1.0))
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
